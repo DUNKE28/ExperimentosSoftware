@@ -1,0 +1,20 @@
+{
+    "id":"0",
+    "tarifaId":"1",
+    "tarifa":{
+        "id":"0",
+        "monto":"200",
+        "tipo_vehiculo":"moto"
+    },
+    "cajeroId":"1",
+    "cajero":{
+        "id":"1",
+        "contraseña":"password",
+        "nombre":"Jose",
+        "apellido":"Morales",
+        "fecha":"29/04/15",
+        "turno":"noche"
+    },
+    "placa":"sds-233",
+    "inicio":
+}
