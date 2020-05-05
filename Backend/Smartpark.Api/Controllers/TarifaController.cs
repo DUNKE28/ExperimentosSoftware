@@ -3,7 +3,7 @@ using Smartpark.Domain;
 using Smartpark.Service;
 namespace Smartpark.Api.Controllers
 {
-     [Route("api/tarifas")]
+    [Route("api/tarifas")]
     [ApiController]
     public class TarifaController:ControllerBase
     {
