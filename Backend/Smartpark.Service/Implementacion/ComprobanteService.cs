@@ -19,6 +19,10 @@ namespace Smartpark.Service.Implementacion
             this.context = context;
             this.espacioRepository = espacioRepository;
         }
+        public ComprobanteService(IComprobanteRepository comprobanteRepository)
+        {
+            this.comprobanteRepository=comprobanteRepository;
+        }
         public bool Delete(int id)
         {
             return comprobanteRepository.Delete(id);
