@@ -12,6 +12,10 @@ namespace Smartpark.Service.Implementacion
         private IIngresoRepository ingresorepository;
         private IEspacioRepository espacioRepository;
         private ApplicationDbContext context;
+        public IngresoService(IIngresoRepository ingresoRepository)
+        {
+            this.ingresorepository=ingresoRepository;
+        }
         public IngresoService(IIngresoRepository ingresoRepository, IEspacioRepository espacioRepository, ApplicationDbContext context){
             this.ingresorepository=ingresoRepository;
             this.espacioRepository=espacioRepository;
