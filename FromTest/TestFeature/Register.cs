@@ -25,7 +25,7 @@ public class Register{
         driver.FindElement(By.XPath("//*[@id='app']/div[2]/div/div/div[2]/div/div/div/div[4]/div[2]/div[1]/div/input")).SendKeys("123456");
         //repetir contraseña
         driver.FindElement(By.XPath("//*[@id='app']/div[2]/div/div/div[2]/div/div/div/div[5]/div[2]/div[1]/div/input")).SendKeys("123456");
-        //repetir contraseña
+        //Marcar checkBox
         driver.FindElement(By.XPath("//*[@id='app']/div[2]/div/div/div[2]/div/div/div/div[6]/div/div[1]/div/div")).Click();
     }
     public void registraAdministrador(){
