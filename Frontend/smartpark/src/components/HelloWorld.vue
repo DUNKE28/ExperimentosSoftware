@@ -128,6 +128,7 @@
                     <v-text-field prepend-icon="person" v-model="apellido_adm" label="Apellido"></v-text-field>
                     <v-text-field prepend-icon="lock" type="password" v-model="contraseña" label="Contraseña"></v-text-field>
                     <v-text-field prepend-icon="lock" type="password" v-model="conaux" label="Repetir contraseña"></v-text-field>
+                    <v-checkbox v-model="checkbox" :label="`Acepto los terminos y condiciones de SmartPark`"></v-checkbox>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -150,6 +151,7 @@
   import axios from 'axios'
   export default {
     data: () => ({
+      checkbox: false,
       adm: false,
       caj: false,
       reg: false,
@@ -188,25 +190,29 @@
       },
 
       guardar(){
-        if(this.contraseña == this.conaux){
-          let me = this;
-          axios
-            .post("api/administradores", {
-              username: me.username,
-              nombre_adm: me.nombre_adm,
-              apellido_adm: me.apellido_adm,
-              contraseña: me.contraseña
-            })
-            .then(function(response) {
-              me.close();
-              alert('Se registró administrador correctamente.')
-            })
-            .catch(function(error) {
-              console.log(error);
-              //me.error=true;
-            });
+        if(this.checkbox){
+          if(this.contraseña == this.conaux){
+            let me = this;
+            axios
+              .post("api/administradores", {
+                username: me.username,
+                nombre_adm: me.nombre_adm,
+                apellido_adm: me.apellido_adm,
+                contraseña: me.contraseña
+              })
+              .then(function(response) {
+                me.close();
+                alert('Se registró administrador correctamente.')
+              })
+              .catch(function(error) {
+                console.log(error);
+                //me.error=true;
+              });
+          } else{
+            alert('Las contraseñas son diferentes.')
+          }
         } else{
-          alert('Las contraseñas son diferentes.')
+          alert('Tienes que aceptar los terminos y condiciones.')
         }
       },
 

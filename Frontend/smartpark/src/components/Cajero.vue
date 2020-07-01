@@ -38,10 +38,19 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="contraseña" label="Contraseña"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12>
+                  <!-- <v-flex xs12 sm12 md12>
                     <v-select v-model="turno_Cajero" :items="metodosCajero" label="Turno">
                     </v-select>
-                  </v-flex>
+                  </v-flex> -->
+                  <p>Turno: </p>
+                  <v-radio-group v-model="turno_Cajero">
+                    <v-radio
+                      v-for="n in metodosCajero"
+                      :key="n"
+                      :label="n"
+                      :value="n"
+                    ></v-radio>
+                  </v-radio-group>
                 </v-layout>
               </v-container>
             </v-card-text>
